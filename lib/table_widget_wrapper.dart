@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:linked_scroll_controller/linked_scroll_controller.dart';
 import 'package:intl/intl.dart';
 
-class BookingTableWidget extends StatefulWidget {
-  const BookingTableWidget({
+class CustomTableWidget extends StatefulWidget {
+  const CustomTableWidget({
     super.key,
     this.width,
     this.height,
@@ -24,10 +24,10 @@ class BookingTableWidget extends StatefulWidget {
   final Future Function()? navigationToUserDetails;
 
   @override
-  State<BookingTableWidget> createState() => _BookingTableWidgetState();
+  State<CustomTableWidget> createState() => _CustomTableWidgetState();
 }
 
-class _BookingTableWidgetState extends State<BookingTableWidget> {
+class _CustomTableWidgetState extends State<CustomTableWidget> {
   LinkedScrollControllerGroup controllerGroup = LinkedScrollControllerGroup();
 
   ScrollController? headerScrollController;
