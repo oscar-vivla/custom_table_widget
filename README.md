@@ -30,3 +30,16 @@ and the Flutter guide for
     import 'package:custom_table_widget/custom_table_widget.dart';
     import 'package:custom_table_widget/table_widget_wrapper.dart';
     ```
+
+3. Utiliza el widget
+
+    ```dart
+      Widget build(BuildContext context) {
+        return CustomTableWidget(
+          bookingData: widget.books,
+          userData: widget.users,
+          homeData: widget.homes);
+      }
+      ```
+  
+
