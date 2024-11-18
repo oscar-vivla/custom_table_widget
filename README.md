@@ -22,6 +22,7 @@ and the Flutter guide for
     custom_table_widget:
     git:
       url: https://github.com/oscar-vivla/custom_table_widget.git
+      ref: main
 ```
 
 2. Importa los paquetes donde vayas a utilizarlo
