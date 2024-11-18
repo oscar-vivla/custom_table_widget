@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 class BookDataSource extends DataGridSource {
@@ -14,15 +13,13 @@ class BookDataSource extends DataGridSource {
               DataGridCell(columnName: 'Tipo de reserva', value: data),
               DataGridCell(columnName: 'Estado de la estancia', value: data),
               DataGridCell(columnName: 'Huésped principal', value: data),
-              const DataGridCell(
-                  columnName: 'Notas huéspedes',
-                  value: 'Texto super largo para comprobar como se ve...'),
+              DataGridCell(columnName: 'Notas huéspedes', value: data),
               DataGridCell(columnName: 'Fecha de entrada', value: data),
               DataGridCell(columnName: 'Fecha de salida', value: data),
               DataGridCell(columnName: 'Nº de personas', value: data),
               DataGridCell(columnName: 'Nº de estancias', value: data),
               DataGridCell(columnName: 'Nº de locker', value: data),
-              const DataGridCell(columnName: 'CX', value: 'Claudia'),
+              DataGridCell(columnName: 'CX', value: data),
               DataGridCell(columnName: 'Planificación', value: data),
               DataGridCell(columnName: 'Check in', value: data),
               DataGridCell(columnName: 'Pre-estancia', value: data),
@@ -52,10 +49,10 @@ class BookDataSource extends DataGridSource {
   }
 }
 
-class CustomTableDavi extends StatefulWidget {
+class CustomTableWidget extends StatefulWidget {
   final List<Map<String, dynamic>>? bookData;
 
-  const CustomTableDavi({
+  const CustomTableWidget({
     super.key,
     this.width,
     this.height,
@@ -70,25 +67,10 @@ class CustomTableDavi extends StatefulWidget {
   // final dynamic homeData;
 
   @override
-  State<CustomTableDavi> createState() => _CustomTableDaviState();
+  State<CustomTableWidget> createState() => _CustomTableWidgetState();
 }
 
-// class BooksRecord {
-//   final String bid;
-//   final String status;
-//   final String bookBy;
-//   final String bookRound;
-//   final String season;
-
-//   BooksRecord(
-//       {required this.bid,
-//       required this.status,
-//       required this.bookBy,
-//       required this.bookRound,
-//       required this.season});
-// }
-
-class _CustomTableDaviState extends State<CustomTableDavi> {
+class _CustomTableWidgetState extends State<CustomTableWidget> {
   late BookDataSource _dataSource;
   final DataGridController _dataGridController = DataGridController();
 
