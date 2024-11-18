@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 class BookDataSource extends DataGridSource {
-  BookDataSource(List<Map<String, dynamic>> bookData) {
+  BookDataSource(List<BookRecords> bookData) {
     rows = bookData
         .map<DataGridRow>((data) => DataGridRow(cells: [
               DataGridCell(columnName: 'Id de reserva', value: data),
@@ -49,8 +49,75 @@ class BookDataSource extends DataGridSource {
   }
 }
 
+class BookRecords {
+  const BookRecords(
+      this.createdAt,
+      this.duration,
+      this.endDate,
+      this.endDateTs,
+      this.season,
+      this.slotsCount,
+      this.startDate,
+      this.startDateTs,
+      this.status,
+      this.uid,
+      this.updatedAt,
+      this.hid,
+      this.bid,
+      this.type,
+      this.bookBy,
+      this.bookRound,
+      this.bookReview,
+      this.stayInfoAdultsCount,
+      this.stayInfoKidsCount,
+      this.stayInfoPetsCount,
+      this.stayInfoRequests,
+      this.stayInfoTravellingWith,
+      this.hostawayReservationId,
+      this.rentPrice,
+      this.rentStartDate,
+      this.rentEndDate,
+      this.rentDays,
+      this.rentStayIsConfirmed,
+      this.openStayAllowsRent,
+      this.openStayStatus,
+      this.bookNotes);
+
+  final DateTime? createdAt;
+  final int? duration;
+  final String? endDate;
+  final DateTime? endDateTs;
+  final String? season;
+  final int? slotsCount;
+  final String? startDate;
+  final DateTime? startDateTs;
+  final String? status;
+  final String? uid;
+  final DateTime? updatedAt;
+  final String? hid;
+  final String? bid;
+  final String? type;
+  final String? bookBy;
+  final String? bookRound;
+  final bool? bookReview;
+  final int? stayInfoAdultsCount;
+  final int? stayInfoKidsCount;
+  final int? stayInfoPetsCount;
+  final String? stayInfoRequests;
+  final String? stayInfoTravellingWith;
+  final String? hostawayReservationId;
+  final String? rentPrice;
+  final String? rentStartDate;
+  final String? rentEndDate;
+  final int? rentDays;
+  final bool? rentStayIsConfirmed;
+  final bool? openStayAllowsRent;
+  final String? openStayStatus;
+  final String? bookNotes;
+}
+
 class CustomTableWidget extends StatefulWidget {
-  final List<Map<String, dynamic>>? bookData;
+  final List<BookRecords>? bookData;
 
   const CustomTableWidget({
     super.key,
