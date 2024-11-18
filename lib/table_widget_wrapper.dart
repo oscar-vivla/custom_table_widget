@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 class BookDataSource extends DataGridSource {
-  BookDataSource(List<BooksRecords> bookData) {
+  BookDataSource(List<BooksData> bookData) {
     rows = bookData
         .map<DataGridRow>((data) => DataGridRow(cells: [
               DataGridCell(columnName: 'Id de reserva', value: data),
@@ -49,8 +49,8 @@ class BookDataSource extends DataGridSource {
   }
 }
 
-class BooksRecords {
-  const BooksRecords(
+class BooksData {
+  const BooksData(
       this.createdAt,
       this.duration,
       this.endDate,
@@ -117,7 +117,7 @@ class BooksRecords {
 }
 
 class CustomTableWidget extends StatefulWidget {
-  final List<BooksRecords>? bookData;
+  final List<BooksData>? bookData;
 
   const CustomTableWidget({
     super.key,
