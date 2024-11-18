@@ -3,8 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 class BookDataSource extends DataGridSource {
-  BookDataSource(List<Map<String, dynamic>> bookingData) {
-    rows = bookingData
+  BookDataSource(List<Map<String, dynamic>> bookData) {
+    rows = bookData
         .map<DataGridRow>((data) => DataGridRow(cells: [
               DataGridCell(columnName: 'Id de reserva', value: data),
               DataGridCell(columnName: 'Casa', value: data),
