@@ -59,13 +59,13 @@ class BookDataSource extends DataGridSource {
 }
 
 class CustomTableDavi extends StatefulWidget {
-  final List<BooksRecord>? bookingData;
+  final List<BooksRecord>? bookData;
 
   const CustomTableDavi({
     super.key,
     this.width,
     this.height,
-    this.bookingData,
+    this.bookData,
     // this.userData,
     // this.homeData,
   });
@@ -126,7 +126,7 @@ class _CustomTableDaviState extends State<CustomTableDavi> {
   @override
   void initState() {
     super.initState();
-    _dataSource = BookDataSource(widget.bookingData ?? []);
+    _dataSource = BookDataSource(widget.bookData ?? []);
   }
 
   @override
