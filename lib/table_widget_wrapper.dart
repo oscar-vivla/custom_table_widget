@@ -4,39 +4,33 @@ import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 class BookDataSource extends DataGridSource {
-  BookDataSource(List<BooksRecord> bookingData) {
+  BookDataSource(List<Map<String, dynamic>> bookingData) {
     rows = bookingData
         .map<DataGridRow>((data) => DataGridRow(cells: [
-              DataGridCell(columnName: 'Id de reserva', value: data.bid),
-              DataGridCell(columnName: 'Casa', value: data.status),
-              DataGridCell(columnName: 'Propietario', value: data.bookBy),
-              DataGridCell(
-                  columnName: 'Fecha de la reserva', value: data.season),
-              DataGridCell(columnName: 'Tipo de reserva', value: data.bid),
-              DataGridCell(
-                  columnName: 'Estado de la estancia', value: data.status),
-              DataGridCell(columnName: 'Huésped principal', value: data.bookBy),
+              DataGridCell(columnName: 'Id de reserva', value: data),
+              DataGridCell(columnName: 'Casa', value: data),
+              DataGridCell(columnName: 'Propietario', value: data),
+              DataGridCell(columnName: 'Fecha de la reserva', value: data),
+              DataGridCell(columnName: 'Tipo de reserva', value: data),
+              DataGridCell(columnName: 'Estado de la estancia', value: data),
+              DataGridCell(columnName: 'Huésped principal', value: data),
               const DataGridCell(
                   columnName: 'Notas huéspedes',
                   value: 'Texto super largo para comprobar como se ve...'),
-              DataGridCell(
-                  columnName: 'Fecha de entrada', value: data.bookRound),
-              DataGridCell(
-                  columnName: 'Fecha de salida', value: data.bookRound),
-              DataGridCell(columnName: 'Nº de personas', value: data.bookRound),
-              DataGridCell(
-                  columnName: 'Nº de estancias', value: data.bookRound),
-              DataGridCell(columnName: 'Nº de locker', value: data.bookRound),
+              DataGridCell(columnName: 'Fecha de entrada', value: data),
+              DataGridCell(columnName: 'Fecha de salida', value: data),
+              DataGridCell(columnName: 'Nº de personas', value: data),
+              DataGridCell(columnName: 'Nº de estancias', value: data),
+              DataGridCell(columnName: 'Nº de locker', value: data),
               const DataGridCell(columnName: 'CX', value: 'Claudia'),
-              DataGridCell(columnName: 'Planificación', value: data.bookRound),
-              DataGridCell(columnName: 'Check in', value: data.bookRound),
-              DataGridCell(columnName: 'Pre-estancia', value: data.bookRound),
-              DataGridCell(
-                  columnName: 'Control de llegada', value: data.bookRound),
-              DataGridCell(columnName: 'NPS', value: data.bookRound),
-              DataGridCell(columnName: 'Disfrutada', value: data.bookRound),
-              DataGridCell(columnName: 'Notas', value: data.bookRound),
-              DataGridCell(columnName: 'Plan de viaje', value: data.bookRound),
+              DataGridCell(columnName: 'Planificación', value: data),
+              DataGridCell(columnName: 'Check in', value: data),
+              DataGridCell(columnName: 'Pre-estancia', value: data),
+              DataGridCell(columnName: 'Control de llegada', value: data),
+              DataGridCell(columnName: 'NPS', value: data),
+              DataGridCell(columnName: 'Disfrutada', value: data),
+              DataGridCell(columnName: 'Notas', value: data),
+              DataGridCell(columnName: 'Plan de viaje', value: data),
             ]))
         .toList();
   }
@@ -59,7 +53,7 @@ class BookDataSource extends DataGridSource {
 }
 
 class CustomTableDavi extends StatefulWidget {
-  final List<BooksRecord>? bookData;
+  final List<Map<String, dynamic>>? bookData;
 
   const CustomTableDavi({
     super.key,
@@ -79,20 +73,20 @@ class CustomTableDavi extends StatefulWidget {
   State<CustomTableDavi> createState() => _CustomTableDaviState();
 }
 
-class BooksRecord {
-  final String bid;
-  final String status;
-  final String bookBy;
-  final String bookRound;
-  final String season;
+// class BooksRecord {
+//   final String bid;
+//   final String status;
+//   final String bookBy;
+//   final String bookRound;
+//   final String season;
 
-  BooksRecord(
-      {required this.bid,
-      required this.status,
-      required this.bookBy,
-      required this.bookRound,
-      required this.season});
-}
+//   BooksRecord(
+//       {required this.bid,
+//       required this.status,
+//       required this.bookBy,
+//       required this.bookRound,
+//       required this.season});
+// }
 
 class _CustomTableDaviState extends State<CustomTableDavi> {
   late BookDataSource _dataSource;
