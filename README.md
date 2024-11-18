@@ -42,5 +42,9 @@ and the Flutter guide for
           homeData: widget.homes);
       }
       ```
-  
+ 4. Ejecuta el siguiente comando para actualizar las dependencias
+
+    ```shell
+     flutter pub get
+    ```
 
