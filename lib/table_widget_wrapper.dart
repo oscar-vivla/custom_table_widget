@@ -1,6 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
+// List<String> columnOrder = [
+//   'Id reserva',
+//   'Casa',
+//   'Propietario',
+//   'Fecha de reserva',
+//   'Tipo de reserva',
+//   'Estado de la estancia',
+//   'Huésped principal',
+//   'Notas huéspedes',
+//   'Fecha de entrada',
+//   'Fecha de salida',
+//   'Nº de personas',
+//   'Nº de estancias',
+//   'Nº de locker',
+//   'CX',
+//   'Planificación',
+//   'Check in',
+//   'Pre-estancia',
+//   'Control de llegada',
+//   'NPS',
+//   'Disfrutada',
+//   'Notas',
+//   'Plan de viaje',
+// ];
+
 class DynamicDataGrid<T> extends StatelessWidget {
   final List<T> data;
   final List<String> columnNames;
