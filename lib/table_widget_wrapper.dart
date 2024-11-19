@@ -47,6 +47,9 @@ class DynamicDataGrid<T> extends StatelessWidget {
         columnNames: columnNames,
       ),
       columns: _getColumns(),
+      allowColumnsDragging: true,
+      columnWidthMode: ColumnWidthMode.auto,
+      showCheckboxColumn: true,
     );
   }
 
@@ -102,7 +105,6 @@ class DynamicDataGridSource<T> extends DataGridSource {
       cells: row.getCells().map<Widget>((dataGridCell) {
         return Container(
           padding: const EdgeInsets.all(8.0),
-          alignment: Alignment.center,
           child: dataGridCell.value,
         );
       }).toList(),
