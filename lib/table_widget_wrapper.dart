@@ -1,46 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
-List<String> columnOrder = [
-  'Id reserva',
-  'Casa',
-  'Propietario',
-  'Fecha de reserva',
-  'Tipo de reserva',
-  'Estado de la estancia',
-  'Huésped principal',
-  'Notas huéspedes',
-  'Fecha de entrada',
-  'Fecha de salida',
-  'Nº de personas',
-  'Nº de estancias',
-  'Nº de locker',
-  'CX',
-  'Planificación',
-  'Check in',
-  'Pre-estancia',
-  'Control de llegada',
-  'NPS',
-  'Disfrutada',
-  'Notas',
-  'Plan de viaje',
-];
-
 class DynamicDataGrid<T> extends StatelessWidget {
   final List<T> data;
-  final List<String> columnNames = columnOrder;
+  final List<String> columnNames;
   final List<Widget Function(T)> columnGetters;
 
-  DynamicDataGrid({
+  const DynamicDataGrid({
     super.key,
     required this.data,
     required this.columnGetters,
+    required this.columnNames,
   });
 
   @override
   Widget build(BuildContext context) {
     return SfDataGrid(
-      source: DynamicDataGridSource<T>(data, columnGetters),
+      source: DynamicDataGridSource<T>(
+        data: data,
+        columnGetters: columnGetters,
+        columnNames: columnNames,
+      ),
       columns: _getColumns(),
     );
   }
@@ -51,6 +31,7 @@ class DynamicDataGrid<T> extends StatelessWidget {
         .map((name) => GridColumn(
               columnName: name,
               label: Container(
+                  alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.all(8.0),
                   child:
                       Text(name, style: const TextStyle(color: Colors.grey))),
@@ -62,8 +43,12 @@ class DynamicDataGrid<T> extends StatelessWidget {
 class DynamicDataGridSource<T> extends DataGridSource {
   final List<T> data;
   final List<Widget Function(T)> columnGetters;
+  final List<String> columnNames;
 
-  DynamicDataGridSource(this.data, this.columnGetters);
+  DynamicDataGridSource(
+      {required this.data,
+      required this.columnGetters,
+      required this.columnNames});
 
   @override
   List<DataGridRow> get rows {
@@ -75,7 +60,7 @@ class DynamicDataGridSource<T> extends DataGridSource {
               return MapEntry(
                 index,
                 DataGridCell<Widget>(
-                  columnName: columnOrder[index],
+                  columnName: columnNames[index],
                   value: getter(item),
                 ),
               );
