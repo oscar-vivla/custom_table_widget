@@ -50,7 +50,10 @@ class DynamicDataGrid<T> extends StatelessWidget {
     return columnNames
         .map((name) => GridColumn(
               columnName: name,
-              label: Text(name, style: const TextStyle(color: Colors.grey)),
+              label: Container(
+                  padding: const EdgeInsets.all(8.0),
+                  child:
+                      Text(name, style: const TextStyle(color: Colors.grey))),
             ))
         .toList();
   }
