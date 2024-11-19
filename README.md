@@ -31,17 +31,53 @@ and the Flutter guide for
     import 'package:custom_table_widget/custom_table_widget.dart';
     import 'package:custom_table_widget/table_widget_wrapper.dart';
     ```
+3. Define las cabeceras que quieras utilizar:
+  ```dart
+  // ejemplo: 
+  List<String> columnNames = [
+  'Id reserva',
+  'Casa',
+  'Propietario',
+  'Fecha de reserva',
+  'Tipo de reserva',
+  'Estado de la estancia',
+  'Huésped principal',
+  'Notas huéspedes',
+  'Fecha de entrada',
+  'Fecha de salida',
+  'Nº de personas',
+  'Nº de estancias',
+  'Nº de locker',
+  'CX',
+  'Planificación',
+  'Check in',
+  'Pre-estancia',
+  'Control de llegada',
+  'NPS',
+  'Disfrutada',
+  'Notas',
+  'Plan de viaje',
+ ];
+  ```
 
-3. Utiliza el widget
+4. Utiliza el widget
 
     ```dart
       Widget build(BuildContext context) {
         return CustomDataGrid(
           data: //añade aquí tu fuente de datos
+
+          // constuye por cada propiedad una columna de datos. Pueden ser tanto textos como widgets. ej:
+          columnGetters: [
+            // (item) => Text(item.id)
+            // (item) => Text(item.name)
+          ],
+          // utiliza la variable de las cabeceras definida anteriormente
+          columnNames: columnNames
           );
       }
       ```
- 4. Ejecuta el siguiente comando para actualizar las dependencias
+ 5. Ejecuta el siguiente comando para actualizar las dependencias
 
     ```shell
      flutter pub get
