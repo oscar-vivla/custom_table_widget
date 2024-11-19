@@ -36,10 +36,9 @@ and the Flutter guide for
 
     ```dart
       Widget build(BuildContext context) {
-        return CustomTableWidget(
-          bookingData: widget.books,
-          userData: widget.users,
-          homeData: widget.homes);
+        return CustomDataGrid(
+          data: //añade aquí tu fuente de datos
+          );
       }
       ```
  4. Ejecuta el siguiente comando para actualizar las dependencias

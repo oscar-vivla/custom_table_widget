@@ -47,12 +47,12 @@ class GenericDataGridSource<T> extends DataGridSource {
   }
 }
 
-class CustomGenericDataGrid<T> extends StatelessWidget {
+class CustomDataGrid<T> extends StatelessWidget {
   final List<T> data;
   final List<GridColumn> columns;
   final List<String> columnNames;
 
-  const CustomGenericDataGrid({
+  const CustomDataGrid({
     super.key,
     required this.data,
     required this.columns,
