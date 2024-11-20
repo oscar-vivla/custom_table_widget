@@ -12,7 +12,7 @@ and the Flutter guide for
 -->
 
 ## Features
- --
+⚠️ Este paquete está diseñado para uso interno. No se garantiza compatibilidad externa.
 
 ## Getting started
 
