@@ -25,12 +25,19 @@ and the Flutter guide for
       ref: main
 ```
 
+O corre este comando:
+
+```shell
+  flutter pub add custom_table_widget
+```
+
 2. Importa los paquetes donde vayas a utilizarlo
 
-    ```dart
-    import 'package:custom_table_widget/custom_table_widget.dart';
-    import 'package:custom_table_widget/table_widget_wrapper.dart';
-    ```
+  ```dart
+  import 'package:custom_table_widget/custom_table_widget.dart';
+  import 'package:custom_table_widget/table_widget_wrapper.dart';
+  ```
+
 3. Define las cabeceras que quieras utilizar:
   ```dart
   // ejemplo: 
@@ -62,24 +69,34 @@ and the Flutter guide for
 
 4. Utiliza el widget
 
-    ```dart
+  ```dart
       Widget build(BuildContext context) {
         return CustomDataGrid(
           data: //añade aquí tu fuente de datos
 
-          // constuye por cada propiedad una columna de datos. Pueden ser tanto textos como widgets. ej:
+          // constuye por cada propiedad una columna de datos.
+          // Pueden ser tanto textos como widgets. ej:
           columnGetters: [
             // (item) => Text(item.id)
             // (item) => Text(item.name)
-          ],
+            (item) => Row(
+              children: [ 
+                Text(item.name,
+                Text(item.lastname), 
+              ),
+            ],
+          ),
+        ],
           // utiliza la variable de las cabeceras definida anteriormente
           columnNames: columnNames
           );
-      }
-      ```
+      };
+  ```
+
+
  5. Ejecuta el siguiente comando para actualizar las dependencias
 
-    ```shell
+  ```shell
      flutter pub get
-    ```
+  ```
 
